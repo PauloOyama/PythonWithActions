@@ -3,12 +3,23 @@ name: Lint Python
 on: [push, pull_request]
 
 jobs:
-  lint:
+  lint-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: psf/black@stable
         with:
           options: "--check --verbose"
+          src: "./"
+          jupyter: true
+  lint-diff:
+    if: failure()
+    needs: lint-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: psf/black@stable
+        with:
+          options: "--diff color"
           src: "./"
           jupyter: true
