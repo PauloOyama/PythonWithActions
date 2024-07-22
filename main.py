@@ -5,4 +5,6 @@ def median(lst):
     return i / len(lst)
 
 
-median([x for x in range(1, 10)])
+print(median([x for x in range(1, 10)]))
+
+print("estou o numero de linhas com AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
